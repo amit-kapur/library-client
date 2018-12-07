@@ -1,0 +1,73 @@
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 1rem;
+
+	@media screen and (min-width: 40em) {
+		margin: 5rem;
+	}
+}
+
+.form, form {
+    display: flex;
+    flex-direction: column;
+	order: 1;
+	flex-grow: 1;
+	margin: 0.5rem;
+
+	@media screen and (min-width: 40em) {
+		margin: 1rem;
+	}
+}
+
+mat-form-field {
+	padding-bottom: 1rem;
+}
+
+.book-list {
+	order: 2;
+	flex-grow: 1;
+	margin: 1rem;
+
+	@media screen and (min-width: 40em) {
+		margin: 1rem 2rem;
+	}
+}
+
+.book-item {
+	margin: 2rem 0;
+}
+
+.stroked-btn {
+	margin-top: 2rem;
+	background-color: #fff;
+	color: gray;
+	border: 1px solid gray;
+	transition: color 300ms ease-out;
+
+	.material-icons {
+		color: blue;
+	}
+
+	&:hover {
+		background-color: #fff;
+		color: black;
+		border: 1px solid black;
+	}
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	margin-bottom: 0rem;
+
+	> span{
+		color: gray;
+		font-weight: 600;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+	}
+}

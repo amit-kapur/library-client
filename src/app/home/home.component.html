@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="form">
+		<h1>Add Book</h1>
+		<form [formGroup]="bookForm" autocomplete="off">
+			<mat-form-field>
+				<mat-label>Title</mat-label>
+				<input matInput type="email" id="title" name="title" formControlName="title" placeholder="Enter the title" required>
+				<mat-error *ngIf="bookForm.get('title').hasError('required')">Title is required</mat-error>
+				<mat-error *ngIf="bookForm.get('title').hasError('maxlength')">Title cannot be more than 30 characters</mat-error>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Category</mat-label>
+				<mat-select placeholder="Select" formControlName="category">
+					<mat-option>-- None --</mat-option>
+					<mat-option value="drama">Drama</mat-option>
+					<mat-option value="comedy">Comedy</mat-option>
+					<mat-option value="sport">Sport</mat-option>
+				</mat-select>
+				<mat-error *ngIf="bookForm.get('category').hasError('required')">Category is required</mat-error>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Description</mat-label>
+				<textarea matInput placeholder="Textarea" formControlName="description"></textarea>
+				<mat-error *ngIf="bookForm.get('description').hasError('required')">Description is required</mat-error>
+			</mat-form-field>
+			<button mat-raised-button type="button" color="primary" (click)="onSubmit()" [disabled]="!bookForm.valid">Add Book</button>
+			<button mat-raised-button class="stroked-btn" type="button" (click)="onReset()">Reset</button>
+		</form>
+	</div>
+
+	<div class="book-list">
+		<h1>
+			<span matBadge="4" matBadgeOverlap="false">Book List</span>
+		</h1>
+
+		<div class="book-item" *ngFor="let book of books">
+			<h4>{{book.title}} <span>{{book.category}}</span></h4>
+			<p> {{book.description}} </p>
+		</div>
+
+	</div>
+</div>

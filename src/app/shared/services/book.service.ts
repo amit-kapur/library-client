@@ -9,7 +9,7 @@ import { IBook } from '../models/book';
 })
 export class BookService {
 
-	private URL = `${environment.apiURL}/books`;
+	public URL = `${environment.apiURL}/books`;
 
 	constructor(private http: HttpClient) { }
 

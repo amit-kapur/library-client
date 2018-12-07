@@ -1,4 +1,4 @@
-import { IBook } from './../shared/models/book';
+import { IBook } from '../shared/models/book';
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../shared/services/book.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -7,10 +7,10 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
 	selector: 'app-home',
-	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.scss']
+	templateUrl: './book-main.component.html',
+	styleUrls: ['./book-main.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class BookMainComponent implements OnInit {
 
 	public bookForm: FormGroup;
 	public books: IBook[] = Array();

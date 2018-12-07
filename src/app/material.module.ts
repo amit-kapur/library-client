@@ -28,7 +28,7 @@ import {
 	MatTabsModule,
 	MatToolbarModule,
 	MatTooltipModule,
-	MatBadgeModule,
+	MatBadgeModule
 
 } from '@angular/material';
 
@@ -59,7 +59,8 @@ const materialModules = [
 	MatStepperModule,
 	MatTabsModule,
 	MatToolbarModule,
-	MatBadgeModule,
+	MatTooltipModule,
+	MatBadgeModule
 ];
 
 @NgModule({

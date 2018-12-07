@@ -5,15 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { HomeComponent } from './home/home.component';
+import { BookMainComponent } from './book-main/book-main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { BookItemComponent } from './book-main/book-item/book-item.component';
+
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HomeComponent
+		BookMainComponent,
+		BookItemComponent
 	],
 	imports: [
 		BrowserModule,

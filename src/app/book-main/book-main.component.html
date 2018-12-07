@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="form">
 		<h1>Add Book</h1>
-		<form [formGroup]="bookForm" autocomplete="off">
+		<form [formGroup]="bookForm"  autocomplete="off">
 			<mat-form-field>
 				<mat-label>Title</mat-label>
 				<input matInput type="email" id="title" name="title" formControlName="title" placeholder="Enter the title" required>
@@ -22,23 +22,18 @@
 
 			<mat-form-field>
 				<mat-label>Description</mat-label>
-				<textarea matInput placeholder="Textarea" formControlName="description"></textarea>
+				<textarea id="description" matInput placeholder="Textarea" formControlName="description"></textarea>
 				<mat-error *ngIf="bookForm.get('description').hasError('required')">Description is required</mat-error>
 			</mat-form-field>
-			<button mat-raised-button type="button" color="primary" (click)="onSubmit()" [disabled]="!bookForm.valid">Add Book</button>
-			<button mat-raised-button class="stroked-btn" type="button" (click)="onReset()">Reset</button>
+			<button mat-raised-button id="addBook" type="button" color="primary" (click)="onSubmit()" [disabled]="!bookForm.valid">Add Book</button>
+			<button mat-raised-button id="reset" class="stroked-btn" type="button" (click)="onReset()">Reset</button>
 		</form>
 	</div>
 
 	<div class="book-list">
-		<h1>
-			<span matBadge="4" matBadgeOverlap="false">Book List</span>
-		</h1>
-
+		<h1 id="booklist">Book List <span id="bookLength" matBadge={{books.length}} matBadgeOverlap="false"></span></h1>
 		<div class="book-item" *ngFor="let book of books">
-			<h4>{{book.title}} <span>{{book.category}}</span></h4>
-			<p> {{book.description}} </p>
+			<app-book-item [book]="book"></app-book-item>
 		</div>
-
 	</div>
 </div>

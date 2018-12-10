@@ -19,11 +19,10 @@ describe('BookService', () => {
 			providers: [BookService]
 		});
 
-
 		postService = new BookService(<any>httpClientSpy);
 		service = TestBed.get(BookService);
 		httpMock = TestBed.get(HttpTestingController);
-	}
+	});
 
 	afterEach(() => {
 			httpMock.verify();
@@ -31,15 +30,15 @@ describe('BookService', () => {
 
 	it('should be created', inject([BookService], (bookService: BookService) => {
 		expect(bookService).toBeTruthy();
-	});
+	}));
 
 	it('should have getBook function', inject([BookService], (bookService: BookService) => {
 		expect(bookService.getBooks).toBeTruthy();
-	});
+	}));
 
 	it('should have addBook function', inject([BookService], (bookService: BookService) => {
 		expect(bookService.addBook).toBeTruthy();
-	});
+	}));
 
 	it('should retreive post from the API via GET', () => {
 
